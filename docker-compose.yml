@@ -28,11 +28,10 @@ services:
       retries: 5
 
   kaneo:
-    # TEMP (testing fa-IR before upstream PR): build from source instead of the official image.
+    # TEMP (testing fa-IR before upstream PR): use the fork's test image built by
+    # GitHub Actions (docker-test.yml). The server only pulls, no heavy build.
     # Revert this before opening the PR.
-    build:
-      context: .
-      dockerfile: Dockerfile.kaneo
+    image: ghcr.io/pourmirzai/kaneo:persian-test
     # image: ghcr.io/usekaneo/kaneo:latest
     environment:
       - KANEO_CLIENT_URL=${KANEO_CLIENT_URL:?}
