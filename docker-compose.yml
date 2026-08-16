@@ -32,6 +32,7 @@ services:
     # GitHub Actions (docker-test.yml). The server only pulls, no heavy build.
     # Revert this before opening the PR.
     image: ghcr.io/pourmirzai/kaneo:persian-test
+    pull_policy: always
     # image: ghcr.io/usekaneo/kaneo:latest
     environment:
       - KANEO_CLIENT_URL=${KANEO_CLIENT_URL:?}
