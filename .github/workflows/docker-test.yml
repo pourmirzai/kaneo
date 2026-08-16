@@ -5,6 +5,10 @@ name: Build test image (fork)
 # NOT intended for upstream PRs — revert before opening a PR.
 
 on:
+  # Auto-build whenever the test branch receives a push (no manual trigger needed).
+  push:
+    branches:
+      - feat/persian-rtl
   workflow_dispatch:
     inputs:
       version:
@@ -42,4 +46,4 @@ jobs:
           file: ./Dockerfile.kaneo
           platforms: linux/amd64
           push: true
-          tags: ${{ env.REGISTRY }}/${{ github.repository_owner }}/kaneo:${{ inputs.version }}
+          tags: ${{ env.REGISTRY }}/${{ github.repository_owner }}/kaneo:persian-test
