@@ -16,6 +16,11 @@ on:
   schedule:
     - cron: "23 2 * * *" # daily, deliberately odd minute
   workflow_dispatch:
+    inputs:
+      force_image:
+        description: "Build the image even when nothing new was merged"
+        type: boolean
+        default: false
 
 concurrency:
   group: sync-upstream
@@ -93,7 +98,7 @@ jobs:
   image:
     name: Build and publish kaneo image
     needs: sync
-    if: needs.sync.outputs.merged == 'true'
+    if: needs.sync.outputs.merged == 'true' || inputs.force_image == true
     runs-on: ubuntu-24.04
     permissions:
       contents: read
