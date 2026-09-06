@@ -139,6 +139,9 @@
 				"labelCreateError": "ایجاد برچسب ناموفق بود",
 				"createMore": "ایجاد بیشتر",
 				"createButton": "ایجاد تیکت",
+				"discardTitle": "وظیفه لغو شود؟",
+				"discardDescription": "جزئیات ذخیره‌نشدهٔ وظیفه از دست خواهند رفت.",
+				"discardButton": "لغو وظیفه",
 				"untitledTask": "تیکت بدون عنوان",
 				"labelColors": {
 					"stone": "سنگی",
@@ -1558,6 +1561,7 @@
 		}
 	},
 	"tasks": {
+		"title": "وظایف",
 		"status": {
 			"label": "وضعیت",
 			"to-do": "برای انجام",
@@ -1871,6 +1875,7 @@
 		"gantt": {
 			"pageTitle": "{{name}} – گانت",
 			"title": "جدول زمانی گانت",
+			"jumpToToday": "رفتن به امروز",
 			"searchPlaceholder": "جستجوی تیکت‌های زمان‌بندی‌شده...",
 			"hideTasks": "پنهان کردن تیکت‌ها",
 			"showTasks": "نمایش تیکت‌ها",
